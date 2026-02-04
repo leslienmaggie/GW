@@ -10,9 +10,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
         html { scroll-behavior: smooth; }
         body { font-family: 'Noto Sans TC', sans-serif; -webkit-font-smoothing: antialiased; color: #1a1a1a; background-color: #ffffff; }
+        
         .nav-link { padding: 8px 12px; font-size: 15px; color: #727272; transition: all 0.2s; white-space: nowrap; cursor: pointer; text-decoration: none; }
         .nav-link:hover { color: #000; }
         .nav-link.active { background-color: #EBEBEB; color: #1a1a1a; font-weight: 500; border-radius: 4px; }
+
         @media (max-width: 767px) {
             #mobile-nav-panel { display: none; position: absolute; top: 64px; left: 0; width: 100%; background: white; flex-direction: column; padding: 10px 24px; border-bottom: 1px solid #eee; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 9999; }
             #mobile-nav-panel.show { display: flex !important; }
@@ -21,6 +23,7 @@
             #mobile-sub-box.active { display: flex; padding-bottom: 10px; }
             .sub-item { display: block; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #727272; text-decoration: none; }
         }
+
         @media (min-width: 768px) {
             #hamburger-btn, #mobile-nav-panel { display: none !important; }
             .dropdown:hover .dropdown-pc { display: block; }
@@ -64,22 +67,30 @@
                     </p>
                 </div>
             </div>
-                    </div>
-            </div>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
     <script>
+        // 使用相對路徑 ./ 確保在 GitHub Pages 讀取穩定
         Promise.all([
-            fetch('nav.html').then(res => res.text()),
-            fetch('footer.html').then(res => res.text())
+            fetch('./nav.html').then(res => {
+                if (!res.ok) throw new Error('無法讀取 nav.html');
+                return res.text();
+            }),
+            fetch('./footer.html').then(res => {
+                if (!res.ok) throw new Error('無法讀取 footer.html');
+                return res.text();
+            })
         ]).then(([navData, footerData]) => {
             document.getElementById('nav-placeholder').innerHTML = navData;
             document.getElementById('footer-placeholder').innerHTML = footerData;
             initNavLogic();
-        }).catch(err => console.error("零件載入失敗：", err));
+        }).catch(err => {
+            console.error("零件載入失敗：", err);
+            // 如果載入失敗，這裡可以做備用處理
+        });
 
         function initNavLogic() {
             const hb = document.getElementById('hamburger-btn');
@@ -87,7 +98,6 @@
             const trigger = document.getElementById('mobile-sub-trigger');
             const subBox = document.getElementById('mobile-sub-box');
 
-            // 這裡補上了 class="sub-item"
             const subHtml = `
                 <a href="wgs.html" class="sub-item">WGS 全基因體檢測</a>
                 <a href="wes.html" class="sub-item">WES 外顯體基因檢測</a>
@@ -95,12 +105,25 @@
                 <a href="sleep.html" class="sub-item">睡眠追蹤</a>
             `;
 
-            if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
-            if(trigger) trigger.onclick = (e) => { 
-                if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
-                subBox.classList.toggle('active'); 
+            if(hb) {
+                hb.onclick = (e) => { 
+                    e.stopPropagation(); 
+                    menu.classList.toggle('show'); 
+                };
+            }
+
+            if(trigger) {
+                trigger.onclick = (e) => { 
+                    if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
+                    subBox.classList.toggle('active'); 
+                };
+            }
+
+            document.onclick = (e) => { 
+                if (menu && !menu.contains(e.target) && e.target !== hb) {
+                    menu.classList.remove('show');
+                }
             };
-            document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
         }
     </script>
 </body>
