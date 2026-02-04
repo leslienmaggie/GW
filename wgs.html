@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全基因體檢測 WGS | 劍橋博士基因檢驗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; -webkit-font-smoothing: antialiased; color: #1a1a1a; background-color: #ffffff; font-size: 17px; }
+        
+        .nav-link { padding: 8px 12px; font-size: 15px; color: #727272; transition: all 0.2s; white-space: nowrap; cursor: pointer; text-decoration: none; }
+        .nav-link:hover { color: #000; }
+        .nav-link.active { background-color: #EBEBEB; color: #1a1a1a; font-weight: 500; border-radius: 4px; }
+
+        @media (max-width: 767px) {
+            #mobile-nav-panel { display: none; position: absolute; top: 64px; left: 0; width: 100%; background: white; flex-direction: column; padding: 10px 24px; border-bottom: 1px solid #eee; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 9999; }
+            #mobile-nav-panel.show { display: flex !important; }
+            .mobile-row { width: 100%; padding: 15px 0; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; color: #727272; text-decoration: none; }
+            #mobile-sub-box { display: none; flex-direction: column; padding-left: 20px; background: #fafafa; }
+            #mobile-sub-box.active { display: flex; padding-bottom: 10px; }
+            .sub-item { display: block; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #727272; text-decoration: none; }
+        }
+
+        @media (min-width: 768px) {
+            #hamburger-btn, #mobile-nav-panel { display: none !important; }
+            .dropdown:hover .dropdown-pc { display: block; }
+            .dropdown-pc { display: none; position: absolute; background: white; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); z-index: 100; border-radius: 8px; border: 1px solid #f0f0f0; }
+            .dropdown-pc a { color: #727272; padding: 12px 16px; display: block; font-size: 14px; text-decoration: none; }
+            .dropdown-pc a:hover { background: #f5f5f5; color: #000; }
+        }
+
+        .vision-btn { 
+            border: 1px solid #727272; 
+            color: #727272; 
+            padding: 6px 0; 
+            width: 140px; 
+            border-radius: 999px; 
+            font-size: 13px; 
+            font-weight: 500;
+            transition: 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        .vision-btn:hover { background: #727272; color: white; }
+
+        .wgs-num { font-size: 26px; color: #ccc; font-weight: 300; display: block; margin-bottom: 8px; }
+        .wgs-grid-title { font-size: 20px; font-weight: 700; color: #444; margin-bottom: 12px; }
+        .wgs-grid-desc { font-size: 16px; color: #666; line-height: 1.8; }
+        .logo-banner { height: 32px; width: auto; }
+        @media (min-width: 768px) { .logo-banner { height: 35px; } }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div id="nav-placeholder"></div>
+
+    <main class="py-16 md:py-24 max-w-5xl mx-auto px-6 flex-grow">
+        <div class="text-center mb-20">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-700 tracking-widest mb-4">全基因體檢測</h1>
+            <p class="text-gray-500 tracking-wide uppercase text-sm">Whole genome sequencing disease risk testing</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+            <div class="flex flex-col items-start w-full group">
+                <div class="w-full aspect-video overflow-hidden rounded-sm mb-10 bg-gray-100">
+                    <img src="https://raw.githubusercontent.com/leslienmaggie/genewellness/main/images/hand.png" alt="成長基因定序" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="w-full">
+                    <h2 class="text-2xl font-bold mb-6 tracking-wide">成長基因定序</h2>
+                    <div class="flex flex-row space-x-3 mb-10">
+                        <a href="growthdetail.html" class="vision-btn">檢測項目 →</a>
+                        <a href="https://drive.google.com/file/d/1vBpv651FO5tosMfOBHRA2MFlq2CjionD/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
+                    </div>
+                    <ul class="text-[16px] text-gray-600 space-y-3 leading-relaxed font-bold">
+                        <li>檢測 > 20000 個身高相關基因位點</li>
+                        <li>13 項身高遺傳疾病 / 6 項內分泌疾病</li>
+                        <li>8 項慢性疾病 / 3 項營養疾病</li>
+                        <li>幹細胞活性與端粒長度評估</li>
+                        <li>營養代謝吸收與運動相關基因</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-start w-full group">
+                <div class="w-full aspect-video overflow-hidden rounded-sm mb-10 bg-gray-100">
+                    <img src="https://raw.githubusercontent.com/leslienmaggie/genewellness/main/images/dna.png" alt="疾病風險定序" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="w-full">
+                    <h2 class="text-2xl font-bold mb-6 tracking-wide">疾病風險定序</h2>
+                    <div class="flex flex-row space-x-3 mb-10">
+                        <a href="wgsdetail.html" class="vision-btn">檢測項目 →</a>
+                        <a href="https://drive.google.com/file/d/12RXSpPzoIcIthjzeMdOBamo92Y0laLx0/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
+                    </div>
+                    <p class="text-[16px] text-gray-600 mb-4 font-bold">6000 項十四大類疾病，包含：</p>
+                    <ul class="text-[16px] text-gray-600 space-y-3 leading-relaxed font-bold">
+                        <li>腫瘤、心血管、神經、代謝疾病</li>
+                        <li>遺傳發育、肌肉骨骼、免疫系統</li>
+                        <li>呼吸系統、眼科、腸胃道、血液疾病</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-20 md:py-28 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-x-20 gap-y-16">
+                <div>
+                    <span class="wgs-num">01</span>
+                    <h3 class="wgs-grid-title">全基因定序 / WGS</h3>
+                    <p class="wgs-grid-desc">一生一次，完整定序解析 30 億個鹼基。整合國際權威資料庫，最完整評估先天疾病風險。</p>
+                </div>
+                <div>
+                    <span class="wgs-num">02</span>
+                    <h3 class="wgs-grid-title">深度基因定序 / Deep sequencing</h3>
+                    <p class="wgs-grid-desc">採用 Illumina NovaSeq X 次世代平台進行全基因體定序 (>30X)，通過 TAF ISO17025 認證，品質有保障。</p>
+                </div>
+                <div>
+                    <span class="wgs-num">03</span>
+                    <h3 class="wgs-grid-title">準確 / Most accurate</h3>
+                    <p class="wgs-grid-desc">以美國 ACMG 與英國 ACGS 指引評估，由遺傳專家審視並撰寫報告，風險基因變異均達 20 倍覆蓋度。</p>
+                </div>
+                <div>
+                    <span class="wgs-num">04</span>
+                    <h3 class="wgs-grid-title">方便 / Most convenient</h3>
+                    <p class="wgs-grid-desc">僅需抽血 3c.c.，30 個工作天即可收到 PDF 電子報告。另可酌收工本費提供原始數據 (FastQ/vcf)。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 自動載入零件
+        const requestNav = fetch('./nav.html').then(res => res.text());
+        const requestFooter = fetch('./footer.html').then(res => res.text());
+
+        Promise.all([requestNav, requestFooter])
+            .then(results => {
+                document.getElementById('nav-placeholder').innerHTML = results[0];
+                document.getElementById('footer-placeholder').innerHTML = results[1];
+                initNavLogic();
+            })
+            .catch(err => console.error("零件載入失敗:", err));
+
+        function initNavLogic() {
+            const hb = document.getElementById('hamburger-btn');
+            const menu = document.getElementById('mobile-nav-panel');
+            const trigger = document.getElementById('mobile-sub-trigger');
+            const subBox = document.getElementById('mobile-sub-box');
+
+            const subHtml = `
+                <a href="wgs.html" class="sub-item" style="font-weight:700; color:#1a1a1a;">WGS 全基因體檢測</a>
+                <a href="wes.html" class="sub-item">WES 外顯體基因檢測</a>
+                <a href="height.html" class="sub-item">身高管理</a>
+                <a href="sleep.html" class="sub-item">睡眠追蹤</a>
+            `;
+
+            if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
+            if(trigger) trigger.onclick = (e) => { 
+                if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
+                subBox.classList.toggle('active'); 
+            };
+            document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
+        }
+    </script>
+</body>
+</html>
