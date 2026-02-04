@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>癌症檢測詳情 | 劍橋博士基因檢驗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; -webkit-font-smoothing: antialiased; color: #1a1a1a; background-color: #ffffff; }
+        .nav-link { padding: 8px 12px; font-size: 15px; color: #727272; transition: all 0.2s; white-space: nowrap; cursor: pointer; text-decoration: none; }
+        .nav-link:hover { color: #000; }
+        .nav-link.active { background-color: #EBEBEB; color: #1a1a1a; font-weight: 500; border-radius: 4px; }
+        @media (max-width: 767px) {
+            #mobile-nav-panel { display: none; position: absolute; top: 64px; left: 0; width: 100%; background: white; flex-direction: column; padding: 10px 24px; border-bottom: 1px solid #eee; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 9999; }
+            #mobile-nav-panel.show { display: flex !important; }
+            .mobile-row { width: 100%; padding: 15px 0; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; color: #727272; text-decoration: none; }
+            #mobile-sub-box { display: none; flex-direction: column; padding-left: 20px; background: #fafafa; }
+            #mobile-sub-box.active { display: flex; padding-bottom: 10px; }
+            .sub-item { display: block; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #727272; text-decoration: none; }
+        }
+        @media (min-width: 768px) {
+            #hamburger-btn, #mobile-nav-panel { display: none !important; }
+            .dropdown:hover .dropdown-pc { display: block; }
+            .dropdown-pc { display: none; position: absolute; background: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 100; border-radius: 8px; border: 1px solid #f0f0f0; }
+            .dropdown-pc a { color: #727272; padding: 12px 16px; display: block; font-size: 14px; text-decoration: none; }
+            .dropdown-pc a:hover { background: #f5f5f5; color: #000; }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div id="nav-placeholder"></div>
+
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-gray-400 text-sm tracking-widest uppercase mb-8">癌症與腫瘤檢測內容：</h2>
+                <div class="text-[#1a1a1a] text-[15px] leading-[2.4] tracking-wider text-justify md:text-left px-4 bg-gray-50 p-8 rounded-lg shadow-sm">
+                    <p class="mb-4"><strong>腦：</strong>血管中心型膠質瘤/膠質母細胞瘤/膠質瘤/腦膜血管外皮細胞瘤/腦膜瘤/寡樹突膠質細胞瘤/兒童膠質母細胞瘤/腦下垂體腺瘤/腦下垂體母細胞瘤/單發型髓母細胞</p>
+                    <p class="mb-4"><strong>眼：</strong>視網膜母細胞瘤/葡萄膜黑色素瘤 | <strong>口：</strong>口腔鱗狀細胞癌/口咽癌/多形性唾液腺</p>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        Promise.all([
+            fetch('nav.html').then(res => res.text()),
+            fetch('footer.html').then(res => res.text())
+        ]).then(([navData, footerData]) => {
+            document.getElementById('nav-placeholder').innerHTML = navData;
+            document.getElementById('footer-placeholder').innerHTML = footerData;
+            initNavLogic();
+        }).catch(err => console.error("零件載入失敗：", err));
+
+        function initNavLogic() {
+            const hb = document.getElementById('hamburger-btn');
+            const menu = document.getElementById('mobile-nav-panel');
+            const trigger = document.getElementById('mobile-sub-trigger');
+            const subBox = document.getElementById('mobile-sub-box');
+
+            // 這裡補上了 class="sub-item"
+            const subHtml = `
+                <a href="wgs.html" class="sub-item">WGS 全基因體檢測</a>
+                <a href="wes.html" class="sub-item">WES 外顯體基因檢測</a>
+                <a href="height.html" class="sub-item">身高管理</a>
+                <a href="sleep.html" class="sub-item">睡眠追蹤</a>
+            `;
+
+            if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
+            if(trigger) trigger.onclick = (e) => { 
+                if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
+                subBox.classList.toggle('active'); 
+            };
+            document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
+        }
+    </script>
+</body>
+</html>
