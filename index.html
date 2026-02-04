@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心血管疾病檢測詳情 | 劍橋博士基因檢驗</title>
+    <title>首頁 | 劍橋博士基因檢驗</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -31,45 +31,144 @@
             .dropdown-pc a { color: #727272; padding: 12px 16px; display: block; font-size: 14px; text-decoration: none; }
             .dropdown-pc a:hover { background: #f5f5f5; color: #000; }
         }
+
+        .unified-btn { width: 180px; height: 48px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; transition: 0.3s; border: 1px solid #d1d5db; color: #727272; background-color: transparent; text-decoration: none; }
+        .unified-btn:hover { border-color: #1a1a1a; color: #1a1a1a; }
+        .bg-white-btn { background-color: #ffffff; }
+
+        .vision-gray-btn { background-color: #7d7d7d; color: white; padding: 10px 24px; border-radius: 8px; display: inline-flex; align-items: center; font-size: 14px; white-space: nowrap; transition: 0.3s; text-decoration: none; }
+        .vision-gray-btn:hover { background-color: #4a4a4a; }
+
+        .testimonial-split-bg { background: linear-gradient(180deg, #ffffff 50%, #f5f5f5 50%); }
+
+        .wix-title { font-size: 28px; font-weight: 700; letter-spacing: 0.1em; line-height: 1.3; }
+        @media (min-width: 768px) { .wix-title { font-size: 32px; } }
+        .tech-svg { width: 80px; height: 80px; margin-bottom: 30px; fill: #1a1a1a; opacity: 0.8; }
+        .section-vision-bg { background-color: #E9E9E9; position: relative; padding: 60px 0 100px 0; overflow: hidden; border-top: 1px solid #eee; scroll-margin-top: 80px; }
+        .section-vision-bg::after { content: ""; position: absolute; bottom: 0; left: 0; width: 50%; height: 100px; background-color: #FFFFFF; border-top-right-radius: 120px; z-index: 1; }
+        #contact-section { scroll-margin-top: 80px; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <div id="nav-placeholder"></div>
 
     <main class="flex-grow">
-        <section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
-            <div class="text-center mb-12">
-                <h2 class="text-gray-400 text-sm tracking-widest uppercase mb-8">心血管檢測項目：</h2>
-                <div class="text-[#1a1a1a] text-[15px] leading-[2.6] tracking-wider text-justify md:text-left px-4 bg-gray-50 p-8 rounded-lg">
-                    <p class="mb-4"><strong>結構與主動脈：</strong>主動脈病變 / Ehlers-Danlos症候群 / 遺傳性胸主動脈夾層 / 左心室緻密化不全</p>
-                    <p class="mb-4"><strong>心肌病變：</strong>致心律不整性心肌病變 / 擴張型心肌病變 / 肥厚型心肌病變 / 限制性心肌病變</p>
-                    <p class="mb-4"><strong>電生理與律動：</strong>心房顫動 / Brugada症候群 / 心臟傳導疾病 / 進行性心臟傳導疾病 / 兒茶酚胺多形性室性心搏過速 / 長QT症候群 / 短QT症候群 / 竇房結疾病</p>
-                    <p class="mb-4"><strong>代謝與其他：</strong>家族性高膽固醇血症</p>
-                </div>
+        <section class="py-12 md:py-24 text-center max-w-4xl mx-auto px-6">
+            <h6 class="text-gray-400 tracking-widest mb-6 text-sm md:text-lg">全方位精準醫療</h6>
+            <h2 class="wix-title mb-10">先天基因｜後天影響｜整體健康</h2>
+            <p class="text-gray-500 mb-12 text-base md:text-xl tracking-widest">依照你的基因，打造出最合適的生活方式</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="#vision" class="unified-btn group">了解更多 <span class="ml-2 border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center text-[10px] group-hover:border-black">↓</span></a>
+                <a href="#contact-section" class="unified-btn group">預約諮詢 <span class="ml-2 border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center text-[10px] group-hover:border-black">↓</span></a>
             </div>
+        </section>
 
-            <div class="mt-20">
-                <h2 class="text-gray-400 text-sm tracking-widest uppercase mb-12 text-center">檢測基因 (115個相關基因)</h2>
-                <div class="bg-gray-50 p-6 rounded border border-gray-100">
-                    <p class="text-[#727272] text-[12px] leading-[2] tracking-normal text-justify font-light">
-                        ABCC9, ABCG5, ABCG8, ACTA2, ACTC1, ACTN2, ALPK3, APOB, APOE, BAG3, CACNA1C, CACNA1D, CALM1, CALM2, CALM3, CASQ2, CAV3, COL3A1, COX15, CRYAB, CSRP3, DES, DMD, DMPK, DSC2, DSG2, DSP, EFEMP2, ELN, EMD, FBN1, FBN2, FHL1, FHOD3, FLNA, FLNC, FXN, GAA, GJA5, GJC1, GLA, GNB2, GNB5, HCN4, JPH2, JUP, KCN5A, KCNE1, KCNE2, KCNH2, KCNJ2, KCNJ5, KCNQ1, LAMP2, LBD3, LDB3/ZASP, LDLR, LDLRAP1, LIPA, LMNA, LOX, MHY7, MYBPC3, MYH11, MYH7, MYL2, MYL3, MYL4, MYLK, MYO6, NEXN, NKX2, NKX3, NKX4, NKX5, NOTCH1, NPPA, PCSK9, PKP2, PLN, PRDM16, PRKAG2, PRKG1, PTPN11, RAF1, RBM20, RIT1, RYR2, SCN5A, SGOL1, SKI, SLC25A4, SLC2A10, SLC4A3, SMAD3, SMAD4, TAZ, TBX5, TECRL, TGFB2, TGFBR1, TGFBR2, TMEM43, TNNC1, TNNI3, TNNI3K, TNNT2, TPM1, TRDN, TRDNa, TRPM4, TTN, TTR, VCL, ZNF9
-                    </p>
+        <section class="bg-[#E9E9E9] py-16 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h4 class="wix-title mb-8">精準檢測 | AI基因分析</h4>
+                <div class="max-w-2xl mx-auto text-gray-500 text-[15px] leading-loose mb-10">根據基因、生活方式、所處環境等進行獨一無二的健康管理<br>全面細緻的健康數據分析、預測和干預<br>實現健康風險的監測、預測和早期預防</div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="wgs.html" class="unified-btn bg-white-btn">WGS ⬇</a>
+                    <a href="wes.html" class="unified-btn bg-white-btn">WES ⬇</a>
                 </div>
             </div>
         </section>
-    </main>
+
+        <section class="py-24 text-center max-w-5xl mx-auto px-6">
+            <h2 class="wix-title mb-20">獨家技術</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="flex flex-col items-center">
+                    <svg class="tech-svg" viewBox="0 0 100 100"><path d="M50 20v60c-16.5 0-30-13.5-30-30s13.5-30 30-30z M50 20c16.5 0 30 13.5 30 30s-13.5 30-30 30z" fill="none" stroke="currentColor" stroke-width="4"/></svg>
+                    <h3 class="text-xl font-bold mb-6">ACMG位點判定AI</h3>
+                    <p class="text-gray-500 text-[15px]">針對台灣人基因研發 / 全自動化平台 / ACMG指引<br>16 條致病準則 / 12 條無害性準則</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="tech-svg" viewBox="0 0 100 100"><path d="M50 20c16.5 0 30 13.5 30 30s-13.5 30-30 30s-30-13.5-30-30h30z" fill="none" stroke="currentColor" stroke-width="4"/></svg>
+                    <h3 class="text-xl font-bold mb-6">次世代基因定序</h3>
+                    <p class="text-gray-500 text-[15px]">NGS高速高效技術<br>數十億個DNA片段定序</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="tech-svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="10 5"/></svg>
+                    <h3 class="text-xl font-bold mb-6">台灣人專用PRS</h3>
+                    <p class="text-gray-500 text-[15px]">Multi-ethnic PRS AI<br>細胞系統反應路徑<br>獨步全球的台灣人演算法</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="section-vision-bg">
+            <div class="max-w-4xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-start gap-12">
+                <div class="md:w-5/12"><h2 class="wix-title text-left leading-tight">改變台灣的<br>基因體醫學</h2></div>
+                <div class="md:w-7/12 flex flex-col items-end text-justify">
+                    <div class="space-y-6 text-gray-700 leading-relaxed text-base mb-10">
+                        <p>健曜國際有限公司於2018年2月由陳彥瑜博士及幾位致力推廣基因檢測的年輕科學家一同成立。提供學研界的科研生物資訊服務，積極開發「精準健康」服務。</p>
+                        <p>專注建立自有基因資料庫與發展大數據分析，是台灣基因檢測結果判讀的領導者。</p>
+                        <p>與國內領導地位的基因定序服務公司合作，提供最優質的基因定序檢測報告服務。</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-end">
+                        <a href="company.html" class="vision-gray-btn">創辦人簡介</a>
+                        <a href="https://drlesliechen.wordpress.com/" target="_blank" class="vision-gray-btn">基因醫學網誌</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-split-bg py-24">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+                    <div>
+                        <div class="text-5xl text-gray-200 font-serif mb-4">“</div>
+                        <h5 class="text-lg font-bold mb-4">羅小姐/運動選手</h5>
+                        <p class="text-gray-500 text-[15px] text-justify">配合營養師長期追蹤但始終維他命D不足導致容易骨質酥鬆，在經過基因檢測後發現麩質不耐基因腸道吸收較差，立即改變飲食習慣，一個月後維他命D數據恢復正常人水平。</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl text-gray-200 font-serif mb-4">“</div>
+                        <h5 class="text-lg font-bold mb-4">蔡小姐/媽媽</h5>
+                        <p class="text-gray-500 text-[15px] text-justify">我跟先生都很高，但兒子身高始終落後，到國中了也沒有進入發育階段，基因檢測報告顯示為晚發育體質讓我放下了心，讓當時的我沒有亂尋秘方介入生長，再搭配基因檢測報告的先天營養建議，果然兒子在高中時開始發育，長到理想身高。</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl text-gray-200 font-serif mb-4">“</div>
+                        <h5 class="text-lg font-bold mb-4">陳小姐/醫師</h5>
+                        <p class="text-gray-500 text-[15px] text-justify">骨質酥鬆的問題在自己身上及家族長輩兄弟都有，基因檢測後發現是ALPL出了問題，馬上讓小孩也一起做基因檢測：果然兩個小孩都有ALPL基因突變。報告結果讓我們重新評估醫療保單項目及額度，多一分保障。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="py-20 border-t border-gray-100 bg-white max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="wix-title mb-8">聯繫我們</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <input type="text" name="name" placeholder="姓名" class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-black" required>
+                        <input type="email" name="email" placeholder="Email *" class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-black" required>
+                        <textarea name="message" placeholder="留下您的訊息" class="w-full border-b border-gray-300 py-2 text-sm h-24 outline-none focus:border-black" required></textarea>
+                        <button type="submit" class="w-full bg-gray-500 text-white py-3 hover:bg-black transition text-sm">SEND</button>
+                    </form>
+                </div>
+                <div class="md:pt-[72px]">
+                    <p class="text-[15px] text-gray-600 mb-8">新北市林口區仁愛路二段502號<br>02-6604-0580</p>
+                    <div class="w-full h-64 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.628867515082!2d121.38555411500732!3d25.0712520839556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a0e28f2083d3%3A0x6734177d63255959!2zMjQ05paw5YyX5biC5p6X5Y-j5Y2A5LuB6mbumnotSfmrrXljYU1MDLomZ8!5e0!3m2!1szh-TW!2stw!4v1625624000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
 
     <div id="footer-placeholder"></div>
 
     <script>
-        Promise.all([
-            fetch('nav.html').then(res => res.text()),
-            fetch('footer.html').then(res => res.text())
-        ]).then(([navData, footerData]) => {
-            document.getElementById('nav-placeholder').innerHTML = navData;
-            document.getElementById('footer-placeholder').innerHTML = footerData;
-            initNavLogic();
-        }).catch(err => console.error("零件載入失敗：", err));
+        // 自動載入零件
+        const requestNav = fetch('./nav.html').then(res => res.text());
+        const requestFooter = fetch('./footer.html').then(res => res.text());
+
+        Promise.all([requestNav, requestFooter])
+            .then(results => {
+                document.getElementById('nav-placeholder').innerHTML = results[0];
+                document.getElementById('footer-placeholder').innerHTML = results[1];
+                initNavLogic();
+            })
+            .catch(err => console.error("零件載入失敗:", err));
 
         function initNavLogic() {
             const hb = document.getElementById('hamburger-btn');
