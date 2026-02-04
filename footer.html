@@ -1,33 +1,7 @@
-<div id="nav-placeholder"></div>
-
-<script>
-    // 載入導覽列
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-            // 載入後需要重新綁定導覽列的點擊事件
-            initNavLogic();
-        });
-
-    function initNavLogic() {
-        const hb = document.getElementById('hamburger-btn');
-        const menu = document.getElementById('mobile-nav-panel');
-        const trigger = document.getElementById('mobile-sub-trigger');
-        const subBox = document.getElementById('mobile-sub-box');
-
-        const subHtml = `
-            <a href="wgs.html" class="sub-item">WGS 全基因體檢測</a>
-            <a href="wes.html" class="sub-item">WES 外顯體基因檢測</a>
-            <a href="height.html" class="sub-item">身高管理</a>
-            <a href="sleep.html" class="sub-item">睡眠追蹤</a>
-        `;
-
-        if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
-        if(trigger) trigger.onclick = (e) => { 
-            if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
-            subBox.classList.toggle('active'); 
-        };
-        document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
-    }
-</script>
+<footer class="bg-[#F5F5F5] py-8 border-t border-gray-200 text-center text-xs tracking-widest font-medium text-gray-500">
+    2026 GeneWellness International 健曜國際
+</footer>
+<a href="https://line.me/R/ti/p/@394kplur" target="_blank" class="fixed bottom-8 right-8 bg-[#757575] text-white px-8 py-3 rounded-full shadow-2xl z-[9999] flex items-center space-x-3 hover:bg-black transition no-underline">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" width="20" height="20"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <span class="font-bold text-sm tracking-widest">Let's Chat!</span>
+</a>
