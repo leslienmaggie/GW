@@ -1,0 +1,33 @@
+<div id="nav-placeholder"></div>
+
+<script>
+    // 載入導覽列
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // 載入後需要重新綁定導覽列的點擊事件
+            initNavLogic();
+        });
+
+    function initNavLogic() {
+        const hb = document.getElementById('hamburger-btn');
+        const menu = document.getElementById('mobile-nav-panel');
+        const trigger = document.getElementById('mobile-sub-trigger');
+        const subBox = document.getElementById('mobile-sub-box');
+
+        const subHtml = `
+            <a href="wgs.html" class="sub-item">WGS 全基因體檢測</a>
+            <a href="wes.html" class="sub-item">WES 外顯體基因檢測</a>
+            <a href="height.html" class="sub-item">身高管理</a>
+            <a href="sleep.html" class="sub-item">睡眠追蹤</a>
+        `;
+
+        if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
+        if(trigger) trigger.onclick = (e) => { 
+            if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
+            subBox.classList.toggle('active'); 
+        };
+        document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
+    }
+</script>
