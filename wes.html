@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全外顯子疾病風險檢測 WES | 劍橋博士基因檢驗</title>
+    
+    <title>全外顯子定序 WES | 深度疾病風險篩檢 | 劍橋博士</title>
+    <meta name="description" content="全外顯子定序 (WES) 提供最全面的基因掃描。劍橋博士運用先進定序技術，針對數萬個基因進行深度檢測。">
+    <meta name="keywords" content="全外顯子定序, WES基因檢測, 深度基因篩檢, 劍橋博士">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,23 +18,6 @@
         .nav-link { padding: 8px 12px; font-size: 15px; color: #727272; transition: all 0.2s; white-space: nowrap; cursor: pointer; text-decoration: none; }
         .nav-link:hover { color: #000; }
         .nav-link.active { background-color: #EBEBEB; color: #1a1a1a; font-weight: 500; border-radius: 4px; }
-
-        @media (max-width: 767px) {
-            #mobile-nav-panel { display: none; position: absolute; top: 64px; left: 0; width: 100%; background: white; flex-direction: column; padding: 10px 24px; border-bottom: 1px solid #eee; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 9999; }
-            #mobile-nav-panel.show { display: flex !important; }
-            .mobile-row { width: 100%; padding: 15px 0; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; color: #727272; text-decoration: none; }
-            #mobile-sub-box { display: none; flex-direction: column; padding-left: 20px; background: #fafafa; }
-            #mobile-sub-box.active { display: flex; padding-bottom: 10px; }
-            .sub-item { display: block; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #727272; text-decoration: none; }
-        }
-
-        @media (min-width: 768px) {
-            #hamburger-btn, #mobile-nav-panel { display: none !important; }
-            .dropdown:hover .dropdown-pc { display: block; }
-            .dropdown-pc { display: none; position: absolute; background: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 100; border-radius: 8px; border: 1px solid #f0f0f0; }
-            .dropdown-pc a { color: #727272; padding: 12px 16px; display: block; font-size: 14px; text-decoration: none; }
-            .dropdown-pc a:hover { background: #f5f5f5; color: #000; }
-        }
 
         .vision-btn { 
             border: 1px solid #727272; 
@@ -46,8 +33,24 @@
             justify-content: center; 
             letter-spacing: 0.05em;
             text-decoration: none;
+            white-space: nowrap;
         }
         .vision-btn:hover { background: #727272; color: white; }
+
+        /* 關鍵對齊樣式 */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; 
+            margin-bottom: 24px; 
+        }
+
+        @media (min-width: 768px) {
+            .button-group {
+                /* 設定最小高度，確保不論 1 或 2 顆按鈕，下方文字都能對齊 */
+                min-height: 100px; 
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -65,8 +68,9 @@
                     <img src="images/surgical.jpg" alt="癌症疾病" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                 </div>
                 <h2 class="text-xl font-bold mb-4 tracking-wide">癌症疾病：</h2>
-                <div class="flex flex-row space-x-3 mb-6">
+                <div class="button-group">
                     <a href="cancer.html" class="vision-btn">檢測項目/基因 ⬇</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1U6aTYWKLSDNhIOggriU5K3tkRYbxvHZv" target="_blank" class="vision-btn">DM 下載 ⬇</a>
                 </div>
                 <p class="text-[17px] text-gray-600 leading-relaxed font-bold">
                     檢測男性180種、女性194種癌症和其他與腫瘤相關的疾病，共334個相關基因。
@@ -78,7 +82,7 @@
                     <img src="images/heart.jpg" alt="心血管疾病" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                 </div>
                 <h2 class="text-xl font-bold mb-4 tracking-wide">心血管疾病：</h2>
-                <div class="flex flex-row space-x-3 mb-6">
+                <div class="button-group">
                     <a href="cardiac.html" class="vision-btn">檢測項目/基因 ⬇</a>
                 </div>
                 <p class="text-[17px] text-gray-600 leading-relaxed font-bold">
@@ -91,7 +95,7 @@
                     <img src="images/alzheimer.png" alt="神經退化疾病" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                 </div>
                 <h2 class="text-xl font-bold mb-4 tracking-wide">神經退化疾病：</h2>
-                <div class="flex flex-row space-x-3 mb-6">
+                <div class="button-group">
                     <a href="neuro.html" class="vision-btn">檢測項目/基因 ⬇</a>
                 </div>
                 <p class="text-[17px] text-gray-600 leading-relaxed font-bold">
@@ -104,51 +108,17 @@
                     <img src="images/diabetes.png" alt="代謝疾病" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                 </div>
                 <h2 class="text-xl font-bold mb-4 tracking-wide">代謝疾病：</h2>
-                <div class="flex flex-row space-x-3 mb-6">
+                <div class="button-group">
                     <a href="metabolic.html" class="vision-btn">檢測項目/基因 ⬇</a>
                 </div>
-                <p class="text-[17px] text-gray-600導致的心血管疾病、糖尿病與痛風等共94個基因。
+                <p class="text-[17px] text-gray-600 leading-relaxed font-bold">
+                    檢測原發性高血壓、動脈粥狀硬化、中風、遺傳性腦血管病變、第二型糖尿病、肥胖與痛風等共94個基因。
                 </p>
             </div>
         </div>
-        </main>
+    </main>
 
     <div id="footer-placeholder"></div>
-
-    <script>
-        // 自動載入零件
-        const requestNav = fetch('./nav.html').then(res => res.text());
-        const requestFooter = fetch('./footer.html').then(res => res.text());
-
-        Promise.all([requestNav, requestFooter])
-            .then(results => {
-                document.getElementById('nav-placeholder').innerHTML = results[0];
-                document.getElementById('footer-placeholder').innerHTML = results[1];
-                initNavLogic();
-                console.log("導覽與頁尾載入成功");
-            })
-            .catch(err => console.error("零件載入失敗:", err));
-
-        function initNavLogic() {
-            const hb = document.getElementById('hamburger-btn');
-            const menu = document.getElementById('mobile-nav-panel');
-            const trigger = document.getElementById('mobile-sub-trigger');
-            const subBox = document.getElementById('mobile-sub-box');
-
-            const subHtml = `
-                <a href="wgs.html" class="sub-item">WGS 全基因體檢測</a>
-                <a href="wes.html" class="sub-item" style="font-weight:700; color:#1a1a1a;">WES 外顯體基因檢測</a>
-                <a href="height.html" class="sub-item">身高管理</a>
-                <a href="sleep.html" class="sub-item">睡眠追蹤</a>
-            `;
-
-            if(hb) hb.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('show'); };
-            if(trigger) trigger.onclick = (e) => { 
-                if (!subBox.innerHTML.trim()) { subBox.innerHTML = subHtml; }
-                subBox.classList.toggle('active'); 
-            };
-            document.onclick = (e) => { if (menu && !menu.contains(e.target) && e.target !== hb) menu.classList.remove('show'); };
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
