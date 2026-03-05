@@ -50,6 +50,14 @@
         }
         .vision-btn:hover { background: #727272; color: white; }
 
+        /* 關鍵修改：設定按鈕容器的最小高度以達到對齊效果 */
+        .button-group {
+            min-height: 140px; /* 根據 3 個按鈕加間距計算出的高度 */
+        }
+        @media (max-width: 767px) {
+            .button-group { min-height: auto; margin-bottom: 2rem; } /* 手機版通常不需要強制對齊 */
+        }
+
         .wgs-num { font-size: 26px; color: #ccc; font-weight: 300; display: block; margin-bottom: 8px; }
         .wgs-grid-title { font-size: 20px; font-weight: 700; color: #444; margin-bottom: 12px; }
         .wgs-grid-desc { font-size: 16px; color: #666; line-height: 1.8; }
@@ -73,7 +81,7 @@
                 </div>
                 <div class="w-full">
                     <h2 class="text-2xl font-bold mb-6 tracking-wide">成長基因定序</h2>
-                    <div class="flex flex-col gap-3 mb-10 items-start">
+                    <div class="button-group flex flex-col gap-3 mb-10 items-start">
                         <a href="growthdetail.html" class="vision-btn">檢測項目 →</a>
                         <a href="https://drive.google.com/file/d/1vBpv651FO5tosMfOBHRA2MFlq2CjionD/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
                         <a href="https://drive.google.com/uc?export=download&id=1yEypRIr6AhYKP0BMnRR60KaYSmDs5pMR" target="_blank" class="vision-btn">成長衛教手冊 ⬇</a>
@@ -94,7 +102,7 @@
                 </div>
                 <div class="w-full">
                     <h2 class="text-2xl font-bold mb-6 tracking-wide">疾病風險定序</h2>
-                    <div class="flex flex-col gap-3 mb-10 items-start">
+                    <div class="button-group flex flex-col gap-3 mb-10 items-start">
                         <a href="wgsdetail.html" class="vision-btn">檢測項目 →</a>
                         <a href="https://drive.google.com/file/d/12RXSpPzoIcIthjzeMdOBamo92Y0laLx0/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
                     </div>
