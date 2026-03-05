@@ -35,8 +35,9 @@
         .vision-btn { 
             border: 1px solid #727272; 
             color: #727272; 
-            padding: 6px 0; 
-            width: 140px; 
+            padding: 8px 0; 
+            width: 100%; /* 手機版佔滿寬度 */
+            max-width: 200px; /* 限制電腦版寬度 */
             border-radius: 999px; 
             font-size: 13px; 
             font-weight: 500;
@@ -46,6 +47,10 @@
             justify-content: center; 
             letter-spacing: 0.05em;
             text-decoration: none;
+            white-space: nowrap;
+        }
+        @media (min-width: 768px) {
+            .vision-btn { width: 140px; padding: 6px 0; } /* 電子版恢復固定寬度 */
         }
         .vision-btn:hover { background: #727272; color: white; }
 
@@ -72,14 +77,10 @@
                 </div>
                 <div class="w-full">
                     <h2 class="text-2xl font-bold mb-6 tracking-wide">成長基因定序</h2>
-                    <div class="flex flex-col space-y-3 mb-10">
-                        <div class="flex flex-row space-x-3">
-                            <a href="growthdetail.html" class="vision-btn">檢測項目 →</a>
-                            <a href="https://drive.google.com/file/d/1vBpv651FO5tosMfOBHRA2MFlq2CjionD/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
-                        </div>
-                        <div class="flex flex-row">
-                            <a href="https://drive.google.com/uc?export=download&id=1yEypRIr6AhYKP0BMnRR60KaYSmDs5pMR" target="_blank" class="vision-btn">成長衛教手冊 ⬇</a>
-                        </div>
+                    <div class="flex flex-col md:flex-row flex-wrap gap-3 mb-10 items-start">
+                        <a href="growthdetail.html" class="vision-btn">檢測項目 →</a>
+                        <a href="https://drive.google.com/file/d/1vBpv651FO5tosMfOBHRA2MFlq2CjionD/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1yEypRIr6AhYKP0BMnRR60KaYSmDs5pMR" target="_blank" class="vision-btn">成長衛教手冊 ⬇</a>
                     </div>
                     <ul class="text-[16px] text-gray-600 space-y-3 leading-relaxed font-bold">
                         <li>檢測 > 20000 個身高相關基因位點</li>
@@ -97,7 +98,7 @@
                 </div>
                 <div class="w-full">
                     <h2 class="text-2xl font-bold mb-6 tracking-wide">疾病風險定序</h2>
-                    <div class="flex flex-row space-x-3 mb-10">
+                    <div class="flex flex-col md:flex-row flex-wrap gap-3 mb-10 items-start">
                         <a href="wgsdetail.html" class="vision-btn">檢測項目 →</a>
                         <a href="https://drive.google.com/file/d/12RXSpPzoIcIthjzeMdOBamo92Y0laLx0/view?usp=sharing" target="_blank" class="vision-btn">DM 下載 ⬇</a>
                     </div>
@@ -141,7 +142,6 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // 自動載入零件
         const requestNav = fetch('./nav.html').then(res => res.text());
         const requestFooter = fetch('./footer.html').then(res => res.text());
 
